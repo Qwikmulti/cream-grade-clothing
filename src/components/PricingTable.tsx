@@ -4,89 +4,133 @@ import { motion } from "framer-motion";
 import QuickContact from "./ui/QuickContact";
 
 const pricingData = [
+  // Cream Grade Section
+  {
+    item: "Winter Mix",
+    quality: "Cream Grade",
+    gender: "Men & Women",
+    price: "£ 6.00",
+  },
   {
     item: "Summer Mix",
-    quality: "Cream",
-    gender: "Men & Women Mix",
+    quality: "Cream Grade",
+    gender: "Men & Women",
     price: "£ 6.50",
   },
   {
-    item: "Winter Mix",
-    quality: "Cream",
-    gender: "Men & Women Mix",
-    price: "£ 5.00",
+    item: "Men Mix",
+    quality: "Cream Grade",
+    gender: "Men",
+    price: "£ 7.00",
   },
   {
-    item: "Shoes",
-    quality: "Cream & First Quality Mix",
-    gender: "Men, Women & Children Mix",
-    price: "£ 5.00",
-  },
-  {
-    item: "Hand Bags & Belts",
-    quality: "Cream & First Quality Mix",
-    gender: "Men, Women & Children Mix",
-    price: "£ 5.00",
-  },
-  {
-    item: "Children Rummage",
-    quality: "Cream & First Quality Mix",
+    item: "Children Summer Mix",
+    quality: "Cream Grade",
     gender: "Children",
-    price: "£ 4.50",
+    price: "£ 7.50",
   },
   {
-    item: "Sleeping/Night Wear",
-    quality: "Cream & First Quality Mix",
-    gender: "Men & Women Mix",
-    price: "£ 3.00",
+    item: "Children Winter Mix",
+    quality: "Cream Grade",
+    gender: "Children",
+    price: "£ 7.00",
   },
   {
-    item: "Workwear",
-    quality: "Cream & First Quality Mix",
-    gender: "Men & Women Mix",
-    price: "£ 3.00",
+    item: "Ladies Dresses",
+    quality: "Cream Grade",
+    gender: "Women",
+    price: "£ 7.50",
   },
   {
-    item: "Underwear and Lingerie",
-    quality: "First Quality",
-    gender: "Men & Women Mix",
-    price: "£ 8.00",
+    item: "Big Size",
+    quality: "Cream Grade",
+    gender: "Men & Women",
+    price: "£ 7.00",
+  },
+  {
+    item: "Lady Jeans",
+    quality: "Cream Grade",
+    gender: "Women",
+    price: "£ 6.00",
+  },
+  {
+    item: "Men Jeans",
+    quality: "Cream Grade",
+    gender: "Men",
+    price: "£ 6.00",
+  },
+  {
+    item: "Shoes (Summer/Winter)",
+    quality: "Cream Grade",
+    gender: "Unisex",
+    price: "£ 5.00",
+  },
+  {
+    item: "Handbags",
+    quality: "Cream Grade",
+    gender: "Women",
+    price: "£ 6.00",
+  },
+  {
+    item: "Lingerie",
+    quality: "Cream Grade",
+    gender: "Women",
+    price: "£ 7.25",
+  },
+  // New With Tags Section
+  {
+    item: "Winter Mix",
+    quality: "New With Tags",
+    gender: "Men & Women",
+    price: "£ 10.00",
   },
   {
     item: "Summer Mix",
-    quality: "First Quality",
-    gender: "Men & Women Mix",
-    price: "£ 4.00",
+    quality: "New With Tags",
+    gender: "Men & Women",
+    price: "£ 10.00",
   },
   {
-    item: "Winter Mix",
-    quality: "First Quality",
-    gender: "Men & Women Mix",
-    price: "£ 3.00",
+    item: "Men Mix",
+    quality: "New With Tags",
+    gender: "Men",
+    price: "£ 10.00",
   },
   {
-    item: "Polo/T-Shirts Mix",
-    quality: "Second Quality",
-    gender: "Men & Women Mix",
-    price: "£ 3.00",
-  },
-  {
-    item: "Winter Mix",
-    quality: "Second Quality",
-    gender: "Men & Women Mix",
-    price: "£ 2.00",
-  },
-  {
-    item: "Summer Mix",
-    quality: "Second Quality",
-    gender: "Men & Women Mix",
-    price: "£ 2.00",
-  },
-  {
-    item: "Heavy Children",
-    quality: "Second Quality",
+    item: "Children Mix (S/W)",
+    quality: "New With Tags",
     gender: "Children",
-    price: "£ 2.00",
+    price: "£ 10.00",
+  },
+  {
+    item: "Ladies Dresses",
+    quality: "New With Tags",
+    gender: "Women",
+    price: "£ 10.00",
+  },
+  {
+    item: "Ladies Mixed",
+    quality: "New With Tags",
+    gender: "Women",
+    price: "£ 10.00",
+  },
+  {
+    item: "Big Size Ladies",
+    quality: "New With Tags",
+    gender: "Women",
+    price: "£ 10.00",
+  },
+  {
+    item: "Lady Jeans",
+    quality: "New With Tags",
+    gender: "Women",
+    price: "£ 10.00",
+  },
+  {
+    item: "Men Jeans",
+    quality: "New With Tags",
+    gender: "Men",
+    price: "£ 10.00",
   },
 ];
 
@@ -180,9 +224,17 @@ export default function PricingTable() {
               <p className="text-premium-gold font-bold text-lg mb-1">
                 Ready to Order?
               </p>
-              <p className="text-white/40 text-sm">
-                Prices may vary based on quantity and seasonal demand.
-              </p>
+              <div className="space-y-1">
+                <p className="text-white/60 text-xs">
+                  • Cream grade items are packed mix new with tags.
+                </p>
+                <p className="text-white/60 text-xs">
+                  • All other items are new without tags.
+                </p>
+                <p className="text-white/60 text-xs">
+                  • All items are clean and of the highest quality.
+                </p>
+              </div>
             </div>
 
             <QuickContact variant="dark" className="mt-0" />

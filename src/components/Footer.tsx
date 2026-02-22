@@ -21,25 +21,89 @@ export default function Footer() {
           Family-run business based in Featherstone, West Yorkshire.
         </p>
 
-        <div className="flex justify-center space-x-8 mb-12">
-          <Link
-            href="#composition"
-            className="text-xs font-bold uppercase tracking-widest text-premium-charcoal/60 hover:text-premium-gold transition-colors"
-          >
-            Composition
-          </Link>
-          <Link
-            href="#quality"
-            className="text-xs font-bold uppercase tracking-widest text-premium-charcoal/60 hover:text-premium-gold transition-colors"
-          >
-            Quality
-          </Link>
-          <Link
-            href="#contact"
-            className="text-xs font-bold uppercase tracking-widest text-premium-charcoal/60 hover:text-premium-gold transition-colors"
-          >
-            Contact
-          </Link>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-left max-w-4xl mx-auto">
+          <div className="space-y-4">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-premium-gold">
+              Buying
+            </h4>
+            <div className="flex flex-col space-y-2">
+              <Link
+                href="/live-offers"
+                className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
+              >
+                Live Offers
+              </Link>
+              <Link
+                href="/wholesale"
+                className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
+              >
+                Wholesale
+              </Link>
+              <Link
+                href="/shipping"
+                className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
+              >
+                Shipping Info
+              </Link>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-premium-gold">
+              Selling
+            </h4>
+            <div className="flex flex-col space-y-2">
+              <Link
+                href="/we-buy"
+                className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
+              >
+                We Buy Clothes
+              </Link>
+              <Link
+                href="/exports"
+                className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
+              >
+                Export Services
+              </Link>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-premium-gold">
+              Company
+            </h4>
+            <div className="flex flex-col space-y-2">
+              <Link
+                href="/about-us"
+                className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
+              >
+                Our Story
+              </Link>
+              <Link
+                href="/contact-us"
+                className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-premium-gold">
+              Support
+            </h4>
+            <div className="flex flex-col space-y-2">
+              <Link
+                href="#"
+                className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="#"
+                className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
+              >
+                Terms of Use
+              </Link>
+            </div>
+          </div>
         </div>
 
         <div className="pt-8 border-t border-premium-gold/5 flex flex-col md:flex-row items-center justify-between text-[11px] uppercase tracking-widest text-premium-charcoal/30">

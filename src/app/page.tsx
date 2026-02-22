@@ -5,7 +5,7 @@ import Offers from "@/components/Offers";
 import PricingTable from "@/components/PricingTable";
 import QualityStandards from "@/components/QualityStandards";
 import About from "@/components/About";
-import Contact from "@/components/Contact";
+// import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
         <PricingTable />
         <About />
         <QualityStandards />
-        <Contact />
+        {/* <Contact /> */}
         <Footer />
     </main>
   );

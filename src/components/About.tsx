@@ -7,7 +7,7 @@ import QuickContact from "./ui/QuickContact";
 export default function About() {
   return (
     <section id="about" className="py-32 bg-transparent overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Visual Grid - Left Side */}
           <div className="relative">
@@ -86,16 +86,6 @@ export default function About() {
                 garment curation. Our journey began with a singular vision: to
                 bridge the gap between high-end UK fashion and resellers
                 worldwide.
-              </p>
-
-              <p>
-                We operate with a philosophy of{" "}
-                <span className="italic text-premium-gold">
-                  "No Nonsense, No Surprises."
-                </span>{" "}
-                Every kilogram of stock we process is meticulously hand-checked
-                by our experts, ensuring only the highest quality tier reaches
-                your inventory.
               </p>
 
               <p>

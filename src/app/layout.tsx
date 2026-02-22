@@ -28,7 +28,11 @@ export const metadata: Metadata = {
     "assorted mix clothing",
   ],
   authors: [{ name: "Wholesale Clothes Limited" }],
-  viewport: "width=device-width, initial-scale=1",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
   themeColor: "#FAFAF5",
 };
 
@@ -45,7 +49,7 @@ export default function RootLayout({
         className={`${inter.variable} ${cormorantGaramond.variable} font-sans antialiased bg-transparent relative min-h-screen`}
       >
         {/* Global Galaxy Background */}
-        <div className="fixed inset-0 z-[-1] pointer-events-none">
+        {/* <div className="fixed inset-0 z-[-1] pointer-events-none">
           <Galaxy
             mouseInteraction={false}
             density={1.5}
@@ -54,7 +58,7 @@ export default function RootLayout({
             twinkleIntensity={0.8}
             transparent={false}
           />
-        </div>
+        </div> */}
 
         <div className="relative z-10">{children}</div>
       </body>

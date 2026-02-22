@@ -1,0 +1,172 @@
+"use client";
+
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
+import { motion } from "framer-motion";
+import { DollarSign, Recycle, Clock, Sparkles, Send } from "lucide-react";
+
+export default function WeBuy() {
+  return (
+    <main className="min-h-screen bg-white">
+      <Header />
+
+      <PageHero
+        title="Turn Your Inventory into Instant Capital"
+        subtitle="Sell to Us"
+        description="Got high-quality clothing sitting in your warehouse or wardrobe? We buy in bulk. We're always looking for premium second-hand stock to add to our Cream Grade collections."
+        breadcrumb={[{ label: "We Buy" }]}
+      />
+
+      {/* Selling Process */}
+      <section className="py-24 ">
+        <div className="container mx-auto px-14">
+          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-premium-charcoal">
+              Simple. Fair. <span className="text-premium-gold">Fast.</span>
+            </h2>
+            <p className="text-premium-charcoal/50">
+              We've streamlined our buying process to ensure you get paid
+              quickly and your clothes find a new home.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                icon: <Clock />,
+                title: "Contact Us",
+                desc: "Send us details about the volume and type of clothing you're selling.",
+              },
+              {
+                step: "02",
+                icon: <Sparkles />,
+                title: "Assessment",
+                desc: "Our experts review your stock through photos or a site visit.",
+              },
+              {
+                step: "03",
+                icon: <DollarSign />,
+                title: "The Offer",
+                desc: "Receive a competitive wholesale offer based on grade and quantity.",
+              },
+              {
+                step: "04",
+                icon: <Recycle />,
+                title: "Pick Up",
+                desc: "We arrange collection from your location. Zero hassle.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="relative group p-8 rounded-3xl bg-premium-cream border border-premium-gold/5"
+              >
+                <div className="absolute top-6 right-6 text-4xl font-display font-bold text-premium-gold/10 group-hover:text-premium-gold/20 transition-colors">
+                  {item.step}
+                </div>
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-premium-gold mb-6 shadow-sm">
+                  {item.icon}
+                </div>
+                <h4 className="text-xl font-display font-bold text-premium-charcoal mb-4">
+                  {item.title}
+                </h4>
+                <p className="text-sm text-premium-charcoal/40 leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Buying Form Teaser */}
+      <section className="py-24 bg-premium-charcoal text-white rounded-[40px] md:rounded-[80px] mx-4 md:mx-8 mb-24 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-[40%] h-full bg-premium-gold opacity-10 blur-[100px] -rotate-12" />
+
+        <div className="container mx-auto px-14 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight">
+                Ready to sell? <br />
+                <span className="text-premium-gold">Let's talk business.</span>
+              </h2>
+              <div className="space-y-4">
+                <p className="text-white/60 text-lg">
+                  We are currently looking for:
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Brand Name Activewear",
+                    "Vintage 90s/00s Streetwear",
+                    "Premium Designer Label",
+                    "High-Street Overstock",
+                  ].map((tag, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-premium-gold" />
+                      <span className="font-bold tracking-wide">{tag}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-md p-10 rounded-3xl border border-white/10 space-y-6">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-white/40">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-white/40">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors"
+                    placeholder="john@example.com"
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-widest text-white/40">
+                  Estimated Weight (kg)
+                </label>
+                <input
+                  type="number"
+                  className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors"
+                  placeholder="e.g. 100"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-widest text-white/40">
+                  Brief Description
+                </label>
+                <textarea
+                  className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors resize-none"
+                  rows={3}
+                  placeholder="What type of clothes are you selling?"
+                />
+              </div>
+              <button className="w-full py-4 bg-premium-gold text-premium-charcoal font-bold rounded-xl flex items-center justify-center gap-3 hover:bg-white transition-all">
+                Send Inquiry <Send size={18} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}

@@ -1,0 +1,125 @@
+"use client";
+
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
+import { motion } from "framer-motion";
+import {
+  Globe2,
+  Ship,
+  Plane,
+  LayoutGrid,
+  CheckCircle2,
+  MapPin,
+} from "lucide-react";
+
+const exportStats = [
+  { label: "Countries Served", value: "40+" },
+  { label: "Annual Shipments", value: "5000+" },
+  { label: "Transit Partners", value: "12" },
+  { label: "Success Rate", value: "99.9%" },
+];
+
+export default function Exports() {
+  return (
+    <main className="min-h-screen bg-white">
+      <Header />
+
+      <PageHero
+        title="Global Logistics. Boundless Fashion."
+        subtitle="International Exports"
+        description="From our warehouse in West Yorkshire to your doorstep, anywhere in the world. We specialise in seamless international distribution of premium second-hand clothing."
+        breadcrumb={[{ label: "Exports" }]}
+      />
+
+      {/* Global Reach Section */}
+      <section className="py-24 relative overflow-hidden px-14">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.03] pointer-events-none">
+          <Globe2 size={800} strokeWidth={0.5} />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-premium-charcoal">
+                Across Oceans. <br />
+                <span className="text-premium-gold">Across Borders.</span>
+              </h2>
+              <p className="text-premium-charcoal/60 leading-relaxed text-lg">
+                Cream Grade Clothing isn't just a UK business. We have built a
+                robust network of freight forwarders and logistics experts to
+                ensure your stock reaches you safely, whether you're in Lagos,
+                New York, or Amsterdam.
+              </p>
+
+              <div className="grid grid-cols-2 gap-8">
+                {exportStats.map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <div className="text-3xl font-display font-bold text-premium-gold">
+                      {stat.value}
+                    </div>
+                    <div className="text-xs uppercase tracking-widest text-premium-charcoal/40 font-bold">
+                      {stat.label}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {[
+                {
+                  icon: <Ship />,
+                  title: "Sea Freight",
+                  desc: "Cost-effective solutions for large volume container orders.",
+                },
+                {
+                  icon: <Plane />,
+                  title: "Air Cargo",
+                  desc: "Rapid delivery for high-priority premium cream grade drops.",
+                },
+                {
+                  icon: <LayoutGrid />,
+                  title: "Customs Handling",
+                  desc: "We provide all necessary documentation for smooth clearance.",
+                },
+                {
+                  icon: <MapPin />,
+                  title: "Door-to-Door",
+                  desc: "Full tracking from our West Yorkshire warehouse to your site.",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="p-8 rounded-3xl bg-premium-cream border border-premium-gold/10 hover:shadow-lg transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-premium-gold mb-6 group-hover:bg-premium-charcoal group-hover:text-white transition-colors">
+                    {item.icon}
+                  </div>
+                  <h4 className="font-bold text-premium-charcoal mb-2">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm text-premium-charcoal/50 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}
