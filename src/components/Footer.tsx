@@ -29,7 +29,7 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col space-y-2">
               <Link
-                href="/live-offers"
+                href="/specialisations"
                 className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
               >
                 Specialisations
@@ -41,10 +41,10 @@ export default function Footer() {
                 Wholesale
               </Link>
               <Link
-                href="/shipping"
+                href="/live-offers"
                 className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
               >
-                Shipping & Logistics
+                Live Offers
               </Link>
             </div>
           </div>
@@ -54,16 +54,28 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col space-y-2">
               <Link
-                href="/we-buy"
+                href="/services"
                 className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
               >
                 Our Services
+              </Link>
+              <Link
+                href="/we-buy"
+                className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
+              >
+                We Buy
               </Link>
               <Link
                 href="/exports"
                 className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
               >
                 Export Coordination
+              </Link>
+              <Link
+                href="/shipping"
+                className="text-sm text-premium-charcoal/60 hover:text-premium-gold transition-colors"
+              >
+                Shipping & Logistics
               </Link>
             </div>
           </div>

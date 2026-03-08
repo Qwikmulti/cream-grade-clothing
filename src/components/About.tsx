@@ -21,7 +21,7 @@ export default function About() {
               >
                 <Image
                   src="/images/b.jpeg"
-                  alt="Stock Selection"
+                  alt="UK Sourcing Operations"
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-110"
                 />
@@ -35,7 +35,7 @@ export default function About() {
               >
                 <Image
                   src="/images/c.jpeg"
-                  alt="Bale Preparation"
+                  alt="Export-Ready Bales"
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-110"
                 />
@@ -54,7 +54,7 @@ export default function About() {
                 100%
               </h4>
               <p className="text-sm text-white/60 font-medium leading-relaxed uppercase tracking-wider">
-                Hand-Checked & Categorized Stock
+                Quality-Assured & Export-Ready
               </p>
             </motion.div>
           </div>

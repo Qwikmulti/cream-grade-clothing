@@ -4,39 +4,30 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { motion } from "framer-motion";
-import {
-  Search,
-  HandshakeIcon,
-  ShieldCheck,
-  Ship,
-  Send,
-  PackageCheck,
-  FileCheck,
-  Users,
-} from "lucide-react";
+import { DollarSign, Recycle, Clock, Sparkles, Send } from "lucide-react";
 
-export default function Services() {
+export default function WeBuy() {
   return (
     <main className="min-h-screen bg-white">
       <Header />
 
       <PageHero
-        title="Your Trusted UK Sourcing Representative"
-        subtitle="Our Services"
-        description="International buyers rely on us to source, inspect, consolidate, and coordinate export of quality wholesale goods from the United Kingdom."
-        breadcrumb={[{ label: "Services" }]}
+        title="We Buy Quality Stock from UK Suppliers"
+        subtitle="Sell to Us"
+        description="Got high-quality clothing or surplus stock? We buy in bulk. We're always sourcing premium second-hand clothing, cream grade stock, and liquidation goods for our international buyers."
+        breadcrumb={[{ label: "We Buy" }]}
       />
 
-      {/* Service Process */}
+      {/* Buying Process */}
       <section className="py-24 ">
         <div className="container mx-auto px-14">
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
             <h2 className="text-3xl md:text-5xl font-display font-bold text-premium-charcoal">
-              How We <span className="text-premium-gold">Work for You.</span>
+              Simple. Fair. <span className="text-premium-gold">Fast.</span>
             </h2>
             <p className="text-premium-charcoal/50">
-              We represent your interests locally — ensuring transparency,
-              efficiency, and reliability at every step.
+              We&apos;ve streamlined our buying process to ensure you get paid
+              quickly and your stock reaches international markets.
             </p>
           </div>
 
@@ -44,27 +35,27 @@ export default function Services() {
             {[
               {
                 step: "01",
-                icon: <Search />,
-                title: "Source",
-                desc: "We identify and source products directly from trusted UK suppliers that match your requirements.",
+                icon: <Clock />,
+                title: "Contact Us",
+                desc: "Send us details about the volume and type of clothing or stock you're selling.",
               },
               {
                 step: "02",
-                icon: <HandshakeIcon />,
-                title: "Negotiate",
-                desc: "We negotiate competitive wholesale pricing on your behalf, leveraging our established UK supplier relationships.",
+                icon: <Sparkles />,
+                title: "Assessment",
+                desc: "Our experts review your stock through photos or a site visit to assess grade and quality.",
               },
               {
                 step: "03",
-                icon: <ShieldCheck />,
-                title: "Inspect",
-                desc: "Our team conducts visual inspections and quality checks to verify grade, condition, and order accuracy.",
+                icon: <DollarSign />,
+                title: "The Offer",
+                desc: "Receive a competitive wholesale offer based on grade, condition, and quantity.",
               },
               {
                 step: "04",
-                icon: <Ship />,
-                title: "Ship",
-                desc: "We consolidate goods, prepare export documentation, and coordinate freight forwarding to your destination.",
+                icon: <Recycle />,
+                title: "Pick Up",
+                desc: "We arrange collection from your location. Zero hassle, fast payment.",
               },
             ].map((item, i) => (
               <motion.div
@@ -93,7 +84,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Detailed Services */}
+      {/* Buying Form */}
       <section className="py-24 bg-premium-charcoal text-white rounded-[40px] md:rounded-[80px] mx-4 md:mx-8 mb-24 overflow-hidden relative">
         <div className="absolute top-0 right-0 w-[40%] h-full bg-premium-gold opacity-10 blur-[100px] -rotate-12" />
 
@@ -101,85 +92,32 @@ export default function Services() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight">
-                Comprehensive{" "}
-                <span className="text-premium-gold">Service Portfolio.</span>
+                Ready to sell? <br />
+                <span className="text-premium-gold">
+                  Let&apos;s talk business.
+                </span>
               </h2>
-              <div className="space-y-6">
-                {[
-                  {
-                    icon: <PackageCheck className="w-5 h-5" />,
-                    title: "Wholesale Clothing Supply",
-                    items: [
-                      "Cream grade clothing",
-                      "New with tags liquidation stock",
-                      "45kg, 50kg & 55kg bale packaging",
-                      "Pallet and container quantities",
-                    ],
-                  },
-                  {
-                    icon: <Search className="w-5 h-5" />,
-                    title: "Procurement Services",
-                    items: [
-                      "Product sourcing from UK suppliers",
-                      "Price negotiation",
-                      "Supplier verification",
-                      "Bulk order management",
-                    ],
-                  },
-                  {
-                    icon: <FileCheck className="w-5 h-5" />,
-                    title: "Quality Control",
-                    items: [
-                      "Visual inspection",
-                      "Order verification",
-                      "Sorting confirmation",
-                    ],
-                  },
-                  {
-                    icon: <Ship className="w-5 h-5" />,
-                    title: "Export Coordination",
-                    items: [
-                      "Consolidation of goods",
-                      "Export documentation support",
-                      "Freight forwarding coordination",
-                      "Container loading arrangements",
-                    ],
-                  },
-                ].map((service, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="border-b border-white/10 pb-6"
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 rounded-lg bg-premium-gold/20 flex items-center justify-center text-premium-gold">
-                        {service.icon}
-                      </div>
-                      <h4 className="font-bold text-lg">{service.title}</h4>
-                    </div>
-                    <ul className="ml-11 space-y-1">
-                      {service.items.map((item, j) => (
-                        <li
-                          key={j}
-                          className="flex items-center gap-2 text-white/60 text-sm"
-                        >
-                          <div className="w-1.5 h-1.5 rounded-full bg-premium-gold" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                ))}
+              <div className="space-y-4">
+                <p className="text-white/60 text-lg">
+                  We are currently looking for:
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Premium Cream Grade Stock",
+                    "Retail Overstock & NWT Goods",
+                    "High-Street Brand Surplus",
+                    "Sorted Second-Hand Clothing",
+                  ].map((tag, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-premium-gold" />
+                      <span className="font-bold tracking-wide">{tag}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
             <div className="bg-white/5 backdrop-blur-md p-10 rounded-3xl border border-white/10 space-y-6">
-              <h3 className="text-2xl font-display font-bold mb-4">
-                Request Our Services
-              </h3>
               <div className="grid grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-white/40">
@@ -188,7 +126,7 @@ export default function Services() {
                   <input
                     type="text"
                     className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors"
-                    placeholder="Company / Contact Name"
+                    placeholder="John Doe"
                   />
                 </div>
                 <div className="space-y-2">
@@ -198,28 +136,19 @@ export default function Services() {
                   <input
                     type="email"
                     className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors"
-                    placeholder="your@email.com"
+                    placeholder="john@example.com"
                   />
                 </div>
               </div>
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase tracking-widest text-white/40">
-                  Service Required
+                  Estimated Weight (kg)
                 </label>
-                <select className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors appearance-none">
-                  <option className="text-premium-charcoal">
-                    Wholesale Supply
-                  </option>
-                  <option className="text-premium-charcoal">
-                    Procurement & Sourcing
-                  </option>
-                  <option className="text-premium-charcoal">
-                    Quality Control
-                  </option>
-                  <option className="text-premium-charcoal">
-                    Export Coordination
-                  </option>
-                </select>
+                <input
+                  type="number"
+                  className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors"
+                  placeholder="e.g. 100"
+                />
               </div>
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase tracking-widest text-white/40">
@@ -228,7 +157,7 @@ export default function Services() {
                 <textarea
                   className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors resize-none"
                   rows={3}
-                  placeholder="Tell us about your requirements..."
+                  placeholder="What type of stock are you selling?"
                 />
               </div>
               <button className="w-full py-4 bg-premium-gold text-premium-charcoal font-bold rounded-xl flex items-center justify-center gap-3 hover:bg-white transition-all">

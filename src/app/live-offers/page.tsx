@@ -5,154 +5,147 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { motion } from "framer-motion";
 import {
-  Shirt,
-  Sparkles,
-  Tag,
-  Package,
-  ArrowRight,
-  CheckCircle2,
+  Instagram,
+  Video,
+  ExternalLink,
+  ShoppingBag,
+  Zap,
+  Users,
 } from "lucide-react";
 import Image from "next/image";
 
-const specialisations = [
+const socialSales = [
   {
-    title: "Used Clothing",
-    icon: <Shirt className="w-8 h-8" />,
+    platform: "Instagram",
+    icon: <Instagram className="w-6 h-6" />,
+    handle: "@juststocktrading",
     description:
-      "Quality second-hand garments sourced from established UK suppliers. Sorted, graded, and prepared for profitable international resale.",
-    features: [
-      "Sourced from trusted UK channels",
-      "Sorted by category and grade",
-      "Ladies, mens, and kids wear",
-      "Consistent supply volumes",
-    ],
-    image: "/images/b.jpeg",
+      "Catch our daily story drops and view premium stock before it ships.",
+    link: "https://instagram.com",
+    color: "bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]",
   },
   {
-    title: "Cream Grade Clothing",
-    icon: <Sparkles className="w-8 h-8" />,
+    platform: "TikTok",
+    icon: <Video className="w-6 h-6" />,
+    handle: "@juststocktrading",
     description:
-      "The highest quality tier. Carefully selected garments with minimal to no signs of wear, including many brand-name and designer pieces.",
-    features: [
-      "Premium quality selection",
-      "Minimal defect rate (2-5%)",
-      "Brand-rich assortment",
-      "Resale-ready presentation",
-    ],
-    image: "/images/c.jpeg",
-  },
-  {
-    title: "Liquidation & New With Tags",
-    icon: <Tag className="w-8 h-8" />,
-    description:
-      "Retail overstock, surplus, and clearance goods from UK retailers. Many items still carry original retail tags and packaging.",
-    features: [
-      "Retail overstock & surplus",
-      "New with tags available",
-      "High-street and brand-name labels",
-      "Pallet and container volumes",
-    ],
-    image: "/images/d.jpeg",
-  },
-  {
-    title: "Export-Ready Bales",
-    icon: <Package className="w-8 h-8" />,
-    description:
-      "Professionally prepared 45kg, 50kg, and 55kg bales designed for efficient container loading and international distribution.",
-    features: [
-      "45kg, 50kg & 55kg options",
-      "Optimised for container loading",
-      "Quality-checked before packing",
-      "Export documentation included",
-    ],
-    image: "/images/a.jpeg",
+      "Join our warehouse walkthroughs and see our quality stock in action.",
+    link: "https://tiktok.com",
+    color: "bg-[#000000]",
   },
 ];
 
-export default function Specialisations() {
+export default function LiveOffers() {
   return (
     <main className="min-h-screen bg-white">
       <Header />
 
       <PageHero
-        title="Quality Wholesale Goods for Global Markets"
-        subtitle="Our Specialisations"
-        description="From premium cream grade clothing to liquidation stock and export-ready bales — we source and supply quality wholesale goods for international buyers."
-        breadcrumb={[{ label: "Specialisations" }]}
+        title="Live Stock Availability & Exclusive Offers"
+        subtitle="Live Offers"
+        description="Stay updated with our latest stock arrivals, exclusive wholesale offers, and real-time availability. Follow us on social media for live warehouse updates."
+        breadcrumb={[{ label: "Live Offers" }]}
       />
 
       <section className="py-24 bg-white relative">
         <div className="container mx-auto px-14">
-          <div className="space-y-24">
-            {specialisations.map((spec, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
-                  i % 2 !== 0 ? "lg:[direction:rtl]" : ""
-                }`}
-              >
-                <div
-                  className={`relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ${
-                    i % 2 !== 0 ? "lg:[direction:ltr]" : ""
-                  }`}
-                >
-                  <Image
-                    src={spec.image}
-                    alt={spec.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-premium-charcoal/50 to-transparent" />
-                  <div className="absolute bottom-6 left-6">
-                    <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
-                      {spec.icon}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <div className="inline-block px-4 py-1 rounded-full bg-premium-gold/10 border border-premium-gold/20">
+                <span className="text-xs font-bold text-premium-gold uppercase tracking-widest">
+                  How It Works
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-premium-charcoal">
+                Real-time Stock.{" "}
+                <span className="text-premium-gold">Direct Access.</span>
+              </h2>
+              <p className="text-premium-charcoal/60 leading-relaxed text-lg">
+                Our social channels give international buyers direct visibility
+                into our current stock levels, new arrivals, and exclusive
+                wholesale pricing — all in real-time.
+              </p>
+
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: <Zap className="text-premium-gold" />,
+                    title: "Instant Updates",
+                    text: "Be the first to know about new stock arrivals and exclusive pricing.",
+                  },
+                  {
+                    icon: <ShoppingBag className="text-premium-gold" />,
+                    title: "Live-Only Offers",
+                    text: "Special wholesale pricing available exclusively through our live sessions.",
+                  },
+                  {
+                    icon: <Users className="text-premium-gold" />,
+                    title: "Direct Communication",
+                    text: "Connect directly with our sourcing team for immediate stock inquiries.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-premium-cream flex items-center justify-center shadow-sm">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-premium-charcoal">
+                        {item.title}
+                      </h4>
+                      <p className="text-sm text-premium-charcoal/50">
+                        {item.text}
+                      </p>
                     </div>
                   </div>
-                </div>
+                ))}
+              </div>
+            </motion.div>
 
-                <div
-                  className={`space-y-6 ${
-                    i % 2 !== 0 ? "lg:[direction:ltr]" : ""
-                  }`}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {socialSales.map((social, i) => (
+                <motion.a
+                  key={i}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group relative overflow-hidden rounded-3xl p-8 h-[400px] flex flex-col justify-end text-white"
                 >
-                  <div className="inline-block px-4 py-1 rounded-full bg-premium-gold/10 border border-premium-gold/20">
-                    <span className="text-xs font-bold text-premium-gold uppercase tracking-widest">
-                      Specialisation {String(i + 1).padStart(2, "0")}
-                    </span>
+                  <div
+                    className={`absolute inset-0 ${social.color} opacity-90 group-hover:scale-110 transition-transform duration-700`}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+
+                  <div className="relative z-10 space-y-4">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center">
+                      {social.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-display font-bold">
+                        {social.platform}
+                      </h3>
+                      <p className="text-sm text-white/70 font-mono">
+                        {social.handle}
+                      </p>
+                    </div>
+                    <p className="text-sm leading-relaxed text-white/80">
+                      {social.description}
+                    </p>
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest group-hover:gap-4 transition-all">
+                      Follow Us <ExternalLink size={14} />
+                    </div>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-display font-bold text-premium-charcoal">
-                    {spec.title}
-                  </h2>
-                  <p className="text-premium-charcoal/60 leading-relaxed text-lg">
-                    {spec.description}
-                  </p>
-                  <ul className="space-y-3">
-                    {spec.features.map((feature, j) => (
-                      <li key={j} className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-premium-gold flex-shrink-0" />
-                        <span className="text-premium-charcoal/70 font-medium">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href="/contact-us"
-                    className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-premium-charcoal hover:text-premium-gold transition-colors group"
-                  >
-                    Inquire About {spec.title}
-                    <ArrowRight
-                      size={16}
-                      className="group-hover:translate-x-1 transition-transform"
-                    />
-                  </a>
-                </div>
-              </motion.div>
-            ))}
+                </motion.a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
