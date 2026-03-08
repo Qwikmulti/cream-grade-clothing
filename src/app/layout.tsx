@@ -16,18 +16,20 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Assorted Mix Cream Grade Clothing | Premium Wholesale Fashion",
+  title: "Just Stock Trading Limited | Strategic Sourcing & Wholesale Export",
   description:
-    "Top-tier Cream Grade clothing wholesale. Meticulously selected, brand-rich, and resale-ready garments from our UK sorting facility in Featherstone. Premium fashion for global export.",
+    "UK-based procurement and wholesale export company delivering used clothing, premium cream grade clothing and liquidation stock to international buyers across Africa, the Middle East, and Eastern Europe.",
   keywords: [
+    "wholesale export UK",
     "cream grade clothing",
-    "wholesale clothing UK",
-    "second hand clothing wholesale",
-    "premium used clothes",
-    "clothing export UK",
-    "assorted mix clothing",
+    "used clothing wholesale",
+    "liquidation stock UK",
+    "procurement services UK",
+    "clothing export Africa",
+    "wholesale clothing bales",
+    "strategic sourcing partner",
   ],
-  authors: [{ name: "Wholesale Clothes Limited" }],
+  authors: [{ name: "Just Stock Trading Limited" }],
 };
 
 export const viewport = {

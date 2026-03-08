@@ -5,27 +5,28 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import QuickContact from "./ui/QuickContact";
 
-const composition = [
+const specialisations = [
   {
-    label: "Ladies Wear",
-    percentage: "65–75%",
+    label: "Used Clothing",
+    percentage: "Premium",
     description:
-      "The majority share, featuring trending styles and premium brands.",
+      "Carefully selected high-quality garments from UK suppliers, prepared for profitable resale markets worldwide.",
     image: "/images/b.jpeg",
     color: "bg-[#EADDC9]",
   },
   {
-    label: "Mens Wear",
-    percentage: "10–20%",
+    label: "Cream Grade Clothing",
+    percentage: "Top Tier",
     description:
-      "Selection of shirts, trousers, and casual wear in top condition.",
+      "The highest quality grade — minimal wear, brand-rich, and resale-ready. The pinnacle of second-hand garments.",
     image: "/images/c.jpeg",
     color: "bg-[#D6C4AD]",
   },
   {
-    label: "Kids Wear",
-    percentage: "10–20%",
-    description: "Durable and high-quality children's garments for all ages.",
+    label: "Liquidation & NWT Stock",
+    percentage: "Surplus",
+    description:
+      "Retail overstock, surplus, and clearance goods supplied in pallet and container volumes. New with tags.",
     image: "/images/d.jpeg",
     color: "bg-[#C2AB8E]",
   },
@@ -54,7 +55,7 @@ export default function Composition() {
             viewport={{ once: true }}
             className="text-premium-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-4 block"
           >
-            Masterfully Balanced
+            What We Supply
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -63,7 +64,7 @@ export default function Composition() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-6xl font-display font-bold text-premium-charcoal mb-8"
           >
-            Typical Composition
+            Our Specialisation
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -72,13 +73,13 @@ export default function Composition() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-premium-charcoal/50 text-xl font-light italic max-w-2xl mx-auto"
           >
-            A carefully curated mix designed to maximize market appeal and
-            profitability for export and wholesale.
+            Delivering quality wholesale goods to international buyers — from
+            premium cream grade clothing to liquidation stock.
           </motion.p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {composition.map((item, index) => (
+          {specialisations.map((item, index) => (
             <motion.div
               key={item.label}
               initial={{ opacity: 0, y: 60 }}
@@ -106,7 +107,7 @@ export default function Composition() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.2 + 0.5 }}
                   >
-                    <span className="text-premium-gold font-display text-5xl font-bold mb-4 block">
+                    <span className="text-premium-gold font-display text-3xl font-bold mb-4 block">
                       {item.percentage}
                     </span>
                     <h3 className="text-3xl font-bold text-white mb-4">
@@ -131,15 +132,15 @@ export default function Composition() {
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1 text-center md:text-left">
               <span className="text-premium-gold font-bold uppercase tracking-widest text-xs mb-4 block">
-                Seasonal Ratio
+                Export-Ready Packaging
               </span>
               <h3 className="text-4xl md:text-5xl font-display font-bold mb-6 italic">
-                80–85% Summer Mix
+                45kg, 50kg & 55kg Bales
               </h3>
               <p className="text-white/60 text-lg max-w-xl font-light">
-                Our summer-heavy composition ensures you stay ahead of the
-                curve, providing lightweight, trendy, and high-demand garments
-                for every market.
+                Prepared for efficient container loading and international
+                distribution. Every bale is quality-checked and export-ready,
+                ensuring your shipment meets the highest standards.
               </p>
 
               <QuickContact variant="dark" className="!justify-start mt-8" />
@@ -148,7 +149,7 @@ export default function Composition() {
               <div className="w-40 h-40 rounded-full border border-premium-gold/30 flex items-center justify-center p-4 text-center backdrop-blur-sm relative group cursor-default">
                 <div className="absolute inset-2 border border-premium-gold/10 rounded-full animate-pulse-slow" />
                 <span className="text-premium-gold text-xs font-bold uppercase tracking-widest">
-                  Resale Ready
+                  Export Ready
                 </span>
               </div>
             </div>

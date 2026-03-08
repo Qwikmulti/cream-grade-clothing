@@ -26,9 +26,9 @@ export default function Exports() {
       <Header />
 
       <PageHero
-        title="Global Logistics. Boundless Fashion."
+        title="Global Export Coordination & Logistics"
         subtitle="International Exports"
-        description="From our warehouse in West Yorkshire to your doorstep, anywhere in the world. We specialise in seamless international distribution of premium second-hand clothing."
+        description="From our UK sourcing network to your doorstep, anywhere in the world. We coordinate seamless international distribution of quality wholesale clothing and liquidation stock."
         breadcrumb={[{ label: "Exports" }]}
       />
 
@@ -46,10 +46,10 @@ export default function Exports() {
                 <span className="text-premium-gold">Across Borders.</span>
               </h2>
               <p className="text-premium-charcoal/60 leading-relaxed text-lg">
-                Cream Grade Clothing isn't just a UK business. We have built a
-                robust network of freight forwarders and logistics experts to
-                ensure your stock reaches you safely, whether you're in Lagos,
-                New York, or Amsterdam.
+                Just Stock Trading isn&apos;t limited to the UK market. We have
+                built a robust network of freight forwarders and logistics
+                experts to ensure your stock reaches you safely, whether
+                you&apos;re in Lagos, Dubai, or Warsaw.
               </p>
 
               <div className="grid grid-cols-2 gap-8">
@@ -92,7 +92,7 @@ export default function Exports() {
                 {
                   icon: <MapPin />,
                   title: "Door-to-Door",
-                  desc: "Full tracking from our West Yorkshire warehouse to your site.",
+                  desc: "Full tracking from our UK suppliers to your international destination.",
                 },
               ].map((item, i) => (
                 <motion.div

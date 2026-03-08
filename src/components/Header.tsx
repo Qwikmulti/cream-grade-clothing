@@ -16,11 +16,11 @@ export default function Header() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Live Offers", href: "/live-offers" },
+    { name: "Specialisations", href: "/live-offers" },
     { name: "Wholesale", href: "/wholesale" },
-    { name: "Shipping", href: "/shipping" },
+    { name: "Services", href: "/we-buy" },
     { name: "Exports", href: "/exports" },
-    { name: "We Buy", href: "/we-buy" },
+    { name: "Shipping", href: "/shipping" },
     { name: "About", href: "/about-us" },
   ];
 
@@ -29,10 +29,10 @@ export default function Header() {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <Link href="/" className="flex flex-col relative z-[60]">
           <span className="text-2xl font-display font-bold tracking-tight text-premium-charcoal">
-            CREAM GRADE
+            JUST STOCK TRADING
           </span>
           <span className="text-[10px] uppercase tracking-[0.3em] text-premium-gold font-medium -mt-1">
-            Assorted Mix Clothing
+            Strategic Sourcing & Export
           </span>
         </Link>
 
@@ -79,10 +79,10 @@ export default function Header() {
               {/* Logo in Overlay */}
               <div className="mb-12">
                 <span className="text-xl font-display font-bold tracking-tight text-premium-charcoal">
-                  CREAM GRADE
+                  JUST STOCK TRADING
                 </span>
                 <div className="text-[8px] uppercase tracking-widest text-premium-gold font-bold">
-                  Assorted Mix Clothing
+                  Strategic Sourcing & Export
                 </div>
               </div>
 

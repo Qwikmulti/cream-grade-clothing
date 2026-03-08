@@ -2,36 +2,37 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Package, Search, ShieldCheck, Ship } from "lucide-react";
 import QuickContact from "./ui/QuickContact";
 
-const deals = [
+const services = [
   {
-    title: "SUMMER CLOTHES",
-    subtitle: "25 ITEMS OF DRESSES, TOPS & SKIRTS FOR £50",
+    title: "Wholesale Supply",
+    description:
+      "Cream grade clothing, NWT liquidation stock, and export-ready bales in pallet and container quantities.",
+    icon: Package,
     image: "/images/b.jpeg",
-    type: "price",
   },
   {
-    title: "KIDS CLOTHES",
-    price: "£2",
-    unit: "PER kg",
+    title: "Procurement Services",
+    description:
+      "Direct sourcing from trusted UK suppliers with competitive price negotiation and bulk order management.",
+    icon: Search,
     image: "/images/d.jpeg",
-    type: "weight",
   },
   {
-    title: "MEN'S CLOTHES",
-    price: "£2",
-    unit: "PER kg",
+    title: "Quality Control",
+    description:
+      "Visual inspection, order verification, and sorting confirmation to ensure every shipment meets your standards.",
+    icon: ShieldCheck,
     image: "/images/c.jpeg",
-    type: "weight",
   },
   {
-    title: "GRADE A",
-    subtitle: "IN FEATHERSTONE WAREHOUSE",
-    price: "£2",
-    unit: "PER kg",
+    title: "Export Coordination",
+    description:
+      "Consolidation of goods, export documentation support, freight forwarding, and container loading arrangements.",
+    icon: Ship,
     image: "/images/a.jpeg",
-    type: "weight",
   },
 ];
 
@@ -47,7 +48,7 @@ export default function Offers() {
             viewport={{ once: true }}
             className="text-6xl md:text-8xl font-display font-bold text-[#8CAF8C] mb-4"
           >
-            Our Offer
+            Our Services
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -56,13 +57,13 @@ export default function Offers() {
             transition={{ delay: 0.2 }}
             className="text-premium-gold font-bold uppercase tracking-[0.2em] text-sm"
           >
-            Top Deals
+            Your Trusted UK Sourcing Representative
           </motion.p>
         </div>
 
-        {/* Deals Grid */}
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {deals.map((deal, index) => (
+          {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 40 }}
@@ -72,50 +73,27 @@ export default function Offers() {
               className="group relative aspect-square overflow-hidden rounded-xl shadow-2xl"
             >
               <Image
-                src={deal.image}
-                alt={deal.title}
+                src={service.image}
+                alt={service.title}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6 text-center text-white">
-                {deal.type === "price" ? (
-                  <>
-                    <h3 className="text-3xl font-display font-bold mb-2 tracking-tight">
-                      {deal.title}
-                    </h3>
-                    <p className="text-sm font-bold max-w-[200px] leading-tight opacity-90">
-                      {deal.subtitle}
-                    </p>
-                  </>
-                ) : (
-                  <>
-                    <span className="text-sm font-bold uppercase tracking-widest mb-1">
-                      ONLY FOR
-                    </span>
-                    <div className="flex items-baseline gap-1 mb-2">
-                      <span className="text-6xl font-display font-bold leading-none">
-                        {deal.price}
-                      </span>
-                      <span className="text-xs font-bold uppercase tracking-tighter opacity-80 leading-none">
-                        {deal.unit}
-                      </span>
-                    </div>
-                    <h3 className="text-3xl font-display font-bold mb-1 tracking-tight">
-                      {deal.title}
-                    </h3>
-                    {deal.subtitle && (
-                      <p className="text-[10px] font-bold uppercase tracking-widest opacity-80">
-                        {deal.subtitle}
-                      </p>
-                    )}
-                  </>
-                )}
+              <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-6 text-center text-white">
+                <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center mb-4">
+                  <service.icon className="w-7 h-7 text-premium-gold" />
+                </div>
+                <h3 className="text-2xl font-display font-bold mb-2 tracking-tight">
+                  {service.title}
+                </h3>
+                <p className="text-sm font-medium max-w-[200px] leading-tight opacity-80">
+                  {service.description}
+                </p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Other Offers Section */}
+        {/* CTA Section */}
         <div className="text-center">
           <motion.h3
             initial={{ opacity: 0 }}
@@ -123,7 +101,7 @@ export default function Offers() {
             viewport={{ once: true }}
             className="text-premium-gold font-bold uppercase tracking-[0.2em] text-sm mb-10"
           >
-            Other Offers
+            We Represent Your Interests Locally
           </motion.h3>
 
           <QuickContact />

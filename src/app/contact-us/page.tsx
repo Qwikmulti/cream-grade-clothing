@@ -12,9 +12,9 @@ export default function ContactUs() {
       <Header />
 
       <PageHero
-        title="We're Here to Help Your Business Thrive"
+        title="Partner With Us for Reliable UK Sourcing"
         subtitle="Contact Us"
-        description="Have a question about our grades, exports, or a bulk order? Our dedicated team in West Yorkshire is ready to assist you."
+        description="Have a question about our products, procurement services, or wholesale exports? Our dedicated team is ready to assist international buyers."
         breadcrumb={[{ label: "Contact Us" }]}
       />
 
@@ -28,9 +28,9 @@ export default function ContactUs() {
                   Get in <span className="text-premium-gold">Touch.</span>
                 </h2>
                 <p className="text-premium-charcoal/50 text-lg leading-relaxed">
-                  Whether you're a new reseller or an established international
-                  buyer, we value every inquiry. Reach out via the form or our
-                  direct channels.
+                  Whether you&apos;re an established importer or exploring new
+                  supply partnerships, we value every inquiry. Reach out via the
+                  form or our direct channels.
                 </p>
               </div>
 
@@ -87,10 +87,10 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <div className="font-bold text-premium-charcoal">
-                    Warehouse 4, Featherstone
+                    Just Stock Trading Limited
                   </div>
                   <div className="text-sm text-premium-charcoal/40">
-                    West Yorkshire, WF7 5AZ, United Kingdom
+                    United Kingdom
                   </div>
                 </div>
               </div>
@@ -135,8 +135,8 @@ export default function ContactUs() {
                   <select className="w-full bg-transparent border-b border-premium-charcoal/10 py-3 focus:border-premium-gold outline-none transition-colors appearance-none cursor-pointer">
                     <option>General Inquiry</option>
                     <option>Wholesale Order</option>
-                    <option>Export Quotation</option>
-                    <option>Sell to Cream Grade</option>
+                    <option>Procurement Request</option>
+                    <option>Export Quote</option>
                     <option>Shipping Question</option>
                   </select>
                 </div>

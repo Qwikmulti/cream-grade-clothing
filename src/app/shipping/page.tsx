@@ -19,9 +19,9 @@ export default function Shipping() {
       <Header />
 
       <PageHero
-        title="Reliable Delivery to Every Corner of the Globe"
-        subtitle="Global Shipping"
-        description="We take the complexity out of logistics. Whether it's a single parcel or a full container, we ensure your cream grade stock arrives safely and on time."
+        title="Reliable Export Logistics & Freight Coordination"
+        subtitle="Shipping & Logistics"
+        description="We coordinate the complexity of international logistics. From bale orders to full containers, we ensure your wholesale stock arrives safely and on time."
         breadcrumb={[{ label: "Shipping" }]}
       />
 
@@ -33,17 +33,17 @@ export default function Shipping() {
               {
                 icon: <Truck className="w-10 h-10" />,
                 title: "UK Domestic",
-                desc: "Same-day dispatch for orders placed before 12 PM. Delivery via reliable couriers within 2-3 working days across the UK mainland.",
+                desc: "Consolidation and coordination within the UK. We manage goods from multiple suppliers to streamline your international shipment.",
               },
               {
                 icon: <Anchor className="w-10 h-10" />,
-                title: "International Sea",
-                desc: "The most cost-effective option for large bulk orders (100kg+). We handle port-to-port or door-to-door delivery with full customs support.",
+                title: "International Sea Freight",
+                desc: "Cost-effective container shipping for large volume bale and pallet orders. Full customs documentation and port coordination.",
               },
               {
                 icon: <MapPinned className="w-10 h-10" />,
-                title: "Express Air",
-                desc: "Fast-track your inventory with our air freight partners. Global delivery typically within 5-7 working days.",
+                title: "Express Air Cargo",
+                desc: "Fast-track freight for priority shipments. Ideal for time-sensitive wholesale orders requiring rapid international delivery.",
               },
             ].map((method, i) => (
               <motion.div
@@ -81,19 +81,19 @@ export default function Shipping() {
               {[
                 {
                   q: "How are shipping costs calculated?",
-                  a: "Shipping is calculated based on total weight and destination. We work with multiple couriers to find the most competitive rate for your specific order.",
+                  a: "Shipping is calculated based on total weight, volume, and destination. We work with multiple freight partners to secure competitive rates for your order.",
                 },
                 {
-                  q: "Do you handle customs and duties?",
-                  a: "For international exports, we provide all necessary commercial invoices and packing lists. However, import duties are typically the responsibility of the buyer.",
+                  q: "Do you handle customs documentation?",
+                  a: "Yes, we provide all necessary commercial invoices, packing lists, and export documentation. Import duties and taxes are typically the responsibility of the buyer.",
                 },
                 {
                   q: "Can I track my shipment?",
-                  a: "Yes, every single order—from small boxes to full containers—comes with professional tracking details sent directly to your email.",
+                  a: "Every shipment — from bale orders to full containers — comes with professional tracking details sent directly to your email or WhatsApp.",
                 },
                 {
-                  q: "What if my goods are damaged in transit?",
-                  a: "We offer comprehensive shipping insurance for all orders. If your bale arrives compromised, we assist with the claim process immediately.",
+                  q: "What if goods are damaged in transit?",
+                  a: "We coordinate shipping insurance for all orders. If your goods arrive compromised, we assist with the claim process immediately.",
                 },
               ].map((faq, i) => (
                 <motion.div
@@ -121,11 +121,11 @@ export default function Shipping() {
             <PhoneCall className="text-premium-gold" />
           </div>
           <h2 className="text-3xl md:text-5xl font-display font-bold text-premium-charcoal mb-8">
-            Need a Custom Quote?
+            Need a Custom Freight Quote?
           </h2>
           <p className="text-premium-charcoal/50 max-w-2xl mx-auto mb-12">
-            Large volume orders often qualify for discounted freight rates.
-            Speak with our logistics team today for a bespoke shipping plan.
+            Container and large volume orders qualify for competitive freight
+            rates. Contact our logistics coordination team today.
           </p>
           <button className="px-10 py-5 bg-premium-charcoal text-white font-bold rounded-full hover:bg-premium-gold transition-all shadow-xl shadow-premium-gold/10">
             Contact Logistics Team

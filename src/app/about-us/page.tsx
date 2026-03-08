@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { motion } from "framer-motion";
-import { Heart, Users2, ShieldCheck, Leaf, MapPin, Award } from "lucide-react";
+import { Target, Users2, ShieldCheck, Handshake, MapPin } from "lucide-react";
 import Image from "next/image";
 
 export default function AboutUs() {
@@ -13,9 +13,9 @@ export default function AboutUs() {
       <Header />
 
       <PageHero
-        title="More Than Just Clothing. A Legacy of Quality."
-        subtitle="Our Journey"
-        description="From a small warehouse in Featherstone to a global exporter, our mission has remained the same: to provide the world with the finest cream grade clothing."
+        title="Strategic Sourcing & Wholesale Export Specialists"
+        subtitle="About Us"
+        description="Just Stock Trading Limited was established to bridge the gap between UK suppliers and international buyers seeking reliable wholesale goods."
         breadcrumb={[{ label: "About Us" }]}
       />
 
@@ -25,52 +25,32 @@ export default function AboutUs() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
               <div className="inline-block p-2 px-4 rounded-full bg-premium-gold/10 text-premium-gold text-xs font-bold uppercase tracking-widest">
-                Our Heritage
+                Our Mission
               </div>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-premium-charcoal">
-                The Featherstone <br />
-                <span className="text-premium-gold">Difference.</span>
+                Built for{" "}
+                <span className="text-premium-gold">Long-Term Trade.</span>
               </h2>
               <div className="space-y-4 text-premium-charcoal/60 leading-relaxed text-lg">
                 <p>
-                  Founded as a family-run business in West Yorkshire, Cream
-                  Grade Clothing was born out of a passion for sustainable
-                  fashion and an eye for exceptional quality. We saw a gap in
-                  the market for second-hand clothing that didn't feel
-                  "second-best."
+                  As a UK-based procurement and export agency, we specialise in
+                  sourcing quality cream grade clothing and liquidation stock
+                  for resale markets worldwide. We work with established
+                  importers and wholesale distributors across Africa, the Middle
+                  East, and Eastern Europe.
                 </p>
                 <p>
-                  Today, we are proud to be one of the UK's leading specialists
-                  in cream grade stock, serving a diverse community of
-                  resellers, boutique owners, and international wholesalers who
-                  trust our brand.
+                  We understand the challenges faced by importers — inconsistent
+                  quality, unreliable suppliers, and lack of transparency. Our
+                  mission is to remove these risks by offering structured
+                  sourcing, professional communication, and dependable export
+                  coordination.
                 </p>
-              </div>
-
-              <div className="flex items-center gap-6 pt-8 border-t border-premium-gold/10">
-                <div className="flex -space-x-4">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
-                      key={i}
-                      className="w-12 h-12 rounded-full border-2 border-white bg-premium-cream overflow-hidden"
-                    >
-                      <Image
-                        src='/images/aa.jpeg'
-                        alt="Team Member"
-                        width={48}
-                        height={48}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <div className="font-bold text-premium-charcoal">
-                    The Cream Grade Family
-                  </div>
-                  <div className="text-xs uppercase tracking-widest text-premium-charcoal/40">
-                    25+ Experts in West Yorkshire
-                  </div>
-                </div>
+                <p>
+                  Our focus is sustainable trade partnerships, not one-off
+                  transactions. Precision, professionalism, and trust define our
+                  approach.
+                </p>
               </div>
             </div>
 
@@ -83,26 +63,12 @@ export default function AboutUs() {
               <div className="absolute inset-4 border border-premium-gold/30 rounded-[40px] z-0" />
               <div className="absolute inset-0 overflow-hidden rounded-[40px] shadow-2xl z-10">
                 <Image
-                  src='/images/aa.jpeg'
-                  alt="Our Warehouse Team"
+                  src="/images/aa.jpeg"
+                  alt="Our Operations"
                   fill
                   className="object-cover"
                 />
               </div>
-              {/* Floating Badge */}
-              {/* <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-xl z-20 space-y-2 border border-premium-gold/10"
-              >
-                <Award className="text-premium-gold w-8 h-8" />
-                <div className="font-display font-bold text-xl text-premium-charcoal">
-                  10+ Years
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-premium-charcoal/40 font-bold">
-                  Of Industry Excellence
-                </div>
-              </motion.div> */}
             </motion.div>
           </div>
         </div>
@@ -113,35 +79,35 @@ export default function AboutUs() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
             <h2 className="text-3xl font-display font-bold text-premium-charcoal">
-              Driven by Values
+              What Sets Us Apart
             </h2>
             <p className="text-premium-charcoal/50">
-              Our commitment to these four pillars is what makes us the
-              preferred partner for clothing retailers worldwide.
+              International buyers rely on us because we deliver on four key
+              pillars that define every partnership we build.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               {
+                icon: <Target />,
+                title: "Precision",
+                desc: "Every order is meticulously sourced, inspected, and prepared to your exact specifications.",
+              },
+              {
                 icon: <ShieldCheck />,
-                title: "Relentless Quality",
-                desc: "No holes, no stains, no excuses. If it's not cream grade, it's not our grade.",
+                title: "Professionalism",
+                desc: "Structured communication, clear documentation, and reliable timelines at every stage.",
               },
               {
-                icon: <Leaf />,
-                title: "Sustainability",
-                desc: "Every kilo we export is one kilo less of waste in our landfills.",
-              },
-              {
-                icon: <Heart />,
-                title: "Client First",
-                desc: "We don't just sell stock; we help your business grow with tailored advice.",
+                icon: <Handshake />,
+                title: "Trust",
+                desc: "We represent your interests locally — ensuring transparency, efficiency, and accountability.",
               },
               {
                 icon: <Users2 />,
-                title: "Community",
-                desc: "Supporting local economies through global trade and local employment.",
+                title: "Long-Term Partnerships",
+                desc: "Our focus is sustainable trade relationships, not one-off transactions.",
               },
             ].map((value, i) => (
               <div key={i} className="space-y-6">
@@ -168,12 +134,12 @@ export default function AboutUs() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
                 <h2 className="text-4xl font-display font-bold">
-                  Visit our Warehouse
+                  United Kingdom
                 </h2>
                 <p className="text-white/60 text-lg leading-relaxed">
-                  Centrally located in West Yorkshire, our headquarters is the
-                  heart of our operations. We welcome business appointments for
-                  wholesale selection.
+                  Just Stock Trading Limited operates from the United Kingdom,
+                  providing dependable sourcing, professional coordination, and
+                  export-ready supply to international buyers worldwide.
                 </p>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
@@ -181,7 +147,6 @@ export default function AboutUs() {
                     <div>
                       <div className="font-bold">Headquarters</div>
                       <div className="text-white/40 text-sm">
-                        Featherstone, West Yorkshire <br />
                         United Kingdom
                       </div>
                     </div>

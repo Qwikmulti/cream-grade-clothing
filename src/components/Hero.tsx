@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 opacity-20">
         <Image
           src="/images/a.jpeg"
-          alt="Premium Cream Grade Clothing"
+          alt="Premium Wholesale Export Clothing"
           fill
           className="object-cover"
           priority
@@ -31,21 +31,21 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* <motion.span
+            <motion.span
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
               className="inline-block px-6 py-2 bg-premium-gold/10 text-premium-gold text-xs font-bold uppercase tracking-[0.3em] rounded-full mb-8 backdrop-blur-sm border border-premium-gold/20"
             >
-              The Pinnacle of UK Sorting
-            </motion.span> */}
+              United Kingdom
+            </motion.span>
 
             <h1 className="text-6xl md:text-8xl font-display font-bold text-premium-charcoal leading-[1.05] mb-8 tracking-tight">
-              Assorted Mix <br />
+              Your Strategic{" "}
               <span className="text-premium-gold italic font-cormorant font-normal">
-                Cream Grade
+                Sourcing Partner
               </span>{" "}
-              Stock
+              in the UK
             </h1>
 
             <motion.p
@@ -54,8 +54,9 @@ export default function Hero() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-xl md:text-2xl text-premium-charcoal/70 leading-relaxed mb-12 max-w-2xl mx-auto font-light"
             >
-              Premium garments selected from the highest-quality tier.
-              Resale-ready, brand-rich, and profit-driven.
+              Supplying global markets with confidence. Premium cream grade
+              clothing, used clothing, and liquidation stock — sourced,
+              quality-checked, and export-ready.
             </motion.p>
 
             <motion.div
@@ -65,20 +66,20 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-6 justify-center"
             >
               <a
-                href="#contact"
+                href="/contact-us"
                 className="group relative px-10 py-5 bg-premium-charcoal text-white rounded-full font-bold text-lg overflow-hidden transition-all duration-500 hover:pr-14"
               >
-                <span className="relative z-10">Inquire for Pricing</span>
+                <span className="relative z-10">Request a Quote</span>
                 <span className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500">
                   →
                 </span>
                 <div className="absolute inset-0 bg-premium-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </a>
               <a
-                href="#quality"
+                href="/we-buy"
                 className="px-10 py-5 border border-premium-charcoal/20 text-premium-charcoal rounded-full font-bold text-lg hover:bg-premium-charcoal/5 transition-all duration-300 backdrop-blur-sm"
               >
-                Quality Standards
+                View Our Services
               </a>
             </motion.div>
           </motion.div>
@@ -97,10 +98,10 @@ export default function Hero() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center max-w-4xl mx-auto px-12 py-8 bg-white/30 backdrop-blur-md rounded-3xl border border-white/50 shadow-2xl shadow-premium-gold/5">
             {[
-              { label: "Summer Share", val: "80-85%" },
-              { label: "Reject Rate", val: "2-5%" },
-              { label: "Condition", val: "Pristine" },
-              { label: "Origin", val: "UK-Sorted" },
+              { label: "Markets Served", val: "Africa • ME • Europe" },
+              { label: "Bale Sizes", val: "45–55kg" },
+              { label: "Quality", val: "Cream Grade" },
+              { label: "Origin", val: "UK-Sourced" },
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <span className="block text-premium-gold font-display text-3xl font-bold mb-1">

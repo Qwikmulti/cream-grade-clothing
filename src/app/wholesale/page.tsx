@@ -4,34 +4,28 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { motion } from "framer-motion";
-import {
-  Package,
-  Truck,
-  ShieldCheck,
-  BarChart3,
-  ArrowRight,
-} from "lucide-react";
+import { Package, ShieldCheck, BarChart3, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import QuickContact from "@/components/ui/QuickContact";
 
 const wholesaleFeatures = [
   {
     icon: <Package className="w-8 h-8 text-premium-gold" />,
-    title: "Premium Cream Grade",
+    title: "Cream Grade Clothing",
     description:
-      "Our highest quality grade, featuring clothing with minimal to no signs of wear, including many brand-name pieces.",
+      "Carefully selected high-quality garments — minimal wear, brand-rich, and prepared for profitable resale markets.",
   },
   {
     icon: <BarChart3 className="w-8 h-8 text-premium-gold" />,
-    title: "Scalable Orders",
+    title: "New With Tags & Liquidation",
     description:
-      "From 20kg mini-bales for startups to 500kg+ shipments for established retailers. We scale with you.",
+      "Retail overstock, surplus, and clearance goods supplied in pallet and container volumes at competitive wholesale pricing.",
   },
   {
     icon: <ShieldCheck className="w-8 h-8 text-premium-gold" />,
-    title: "Quality Guaranteed",
+    title: "Export-Ready Bales",
     description:
-      "Every bale is hand-picked and double-checked by our quality control team in West Yorkshire.",
+      "45kg, 50kg, and 55kg bale packaging prepared for efficient container loading and international distribution.",
   },
 ];
 
@@ -41,9 +35,9 @@ export default function Wholesale() {
       <Header />
 
       <PageHero
-        title="Scale Your Business with Premium Stock"
+        title="Premium Wholesale Clothing Supply"
         subtitle="Wholesale Solutions"
-        description="Reliable, high-quality, and hand-sorted. We provide the foundation for successful thrift stores and fashion resellers across the country."
+        description="Reliable, quality-assured wholesale clothing sourced from trusted UK suppliers. Cream grade clothing, liquidation stock, and export-ready bales for international buyers."
         breadcrumb={[{ label: "Wholesale" }]}
       />
 
@@ -68,23 +62,24 @@ export default function Wholesale() {
               <div className="absolute inset-0 bg-gradient-to-t from-premium-charcoal/60 to-transparent" />
               <div className="absolute bottom-8 left-8 right-8 text-white">
                 <p className="text-sm font-bold uppercase tracking-widest mb-2 text-premium-gold">
-                  Bale Example
+                  Export Ready
                 </p>
                 <h3 className="text-2xl font-display font-bold">
-                  Standard 45kg Cream Grade Bale
+                  Quality-Assured Wholesale Stock
                 </h3>
               </div>
             </motion.div>
 
             <div className="space-y-8">
               <h2 className="text-3xl md:text-5xl font-display font-bold text-premium-charcoal">
-                Bulk Buying <br />
-                <span className="text-premium-gold">Made Simple.</span>
+                Sourced & Supplied{" "}
+                <span className="text-premium-gold">with Confidence.</span>
               </h2>
               <p className="text-premium-charcoal/60 leading-relaxed text-lg">
-                We understand that as a business owner, your inventory is your
-                lifeblood. That's why we focus on transparency, consistency, and
-                the highest grade clothing on the market.
+                We source directly from trusted UK suppliers, negotiate
+                competitive wholesale pricing, conduct quality checks, and
+                consolidate shipments — providing everything you need for
+                profitable international resale.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -113,42 +108,42 @@ export default function Wholesale() {
                 whileTap={{ scale: 0.98 }}
                 className="mt-8 px-8 py-4 bg-premium-charcoal text-white rounded-full font-bold flex items-center gap-3 hover:bg-premium-gold transition-colors shadow-xl"
               >
-                Inquire for Price List <QuickContact />
+                Inquire for Pricing <QuickContact />
               </motion.button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Teaser */}
+      {/* Volume Tiers */}
       <section className="py-24 bg-premium-cream">
         <div className="container mx-auto px-14 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-premium-charcoal">
-              Flexible Tiers for Every Stage
+              Flexible Volume for Every Buyer
             </h2>
             <p className="text-premium-charcoal/50">
-              Whether you're selling on Depop or running a physical boutique, we
-              have a volume tier that works for your budget.
+              Whether you&apos;re an established importer or expanding into new
+              markets, we have supply capacity to match your requirements.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             {[
               {
-                tier: "Starter",
-                weight: "20kg - 40kg",
-                desc: "Perfect for online resellers and side-hustles.",
+                tier: "Bale Orders",
+                weight: "45–55kg Bales",
+                desc: "Export-ready bale packaging for efficient container loading and distribution.",
               },
               {
-                tier: "Business",
-                weight: "50kg - 200kg",
-                desc: "For established stores needing consistent weekly stock.",
+                tier: "Pallet Quantities",
+                weight: "Pallet Loads",
+                desc: "Consolidated pallet orders for established wholesale distributors.",
               },
               {
-                tier: "Enterprise",
-                weight: "500kg+",
-                desc: "Bulk logistics for large retailers and distributors.",
+                tier: "Container Volumes",
+                weight: "Full Containers",
+                desc: "Bulk container supply for large-scale importers and distribution networks.",
               },
             ].map((card, i) => (
               <div
@@ -166,7 +161,7 @@ export default function Wholesale() {
                 </p>
                 <div className="h-[1px] bg-premium-gold/10 w-full mb-8" />
                 <button className="text-xs font-bold uppercase tracking-widest text-premium-charcoal hover:text-premium-gold transition-colors">
-                  Learn More
+                  Request Quote
                 </button>
               </div>
             ))}

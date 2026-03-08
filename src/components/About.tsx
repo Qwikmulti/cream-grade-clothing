@@ -67,32 +67,31 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-premium-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-6 block">
-              Our Heritage & Commitment
+              About Just Stock Trading
             </span>
             <h2 className="text-5xl md:text-6xl font-display font-bold text-premium-charcoal mb-8 leading-[1.1]">
-              A Family-Run Legacy in <br />
+              Your Strategic Partner in{" "}
               <span className="text-premium-gold italic font-cormorant font-normal">
-                Premium Sorting
+                UK Sourcing
               </span>
             </h2>
 
             <div className="space-y-6 text-premium-charcoal/70 text-lg font-light leading-relaxed">
               <p>
-                Based in the heart of Featherstone, West Yorkshire,{" "}
+                Based in the United Kingdom,{" "}
                 <span className="font-bold text-premium-charcoal">
-                  Wholesale Clothes Limited
+                  Just Stock Trading Limited
                 </span>{" "}
-                is a family-owned enterprise dedicated to the art of premium
-                garment curation. Our journey began with a singular vision: to
-                bridge the gap between high-end UK fashion and resellers
-                worldwide.
+                was established to bridge the gap between UK suppliers and
+                international buyers seeking reliable wholesale goods. We
+                specialise in sourcing quality cream grade clothing and
+                liquidation stock for resale markets worldwide.
               </p>
 
               <p>
-                Beyond sales, we are champions of circular fashion. By extending
-                the lifecycle of premium garments, we help our partners build
-                sustainable, profitable businesses while reducing global textile
-                waste.
+                We are not simply wholesalers. We are your strategic sourcing
+                partner — ensuring transparency, efficiency, and reliability at
+                every step of the procurement and export process.
               </p>
             </div>
 

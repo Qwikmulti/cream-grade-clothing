@@ -1,33 +1,33 @@
 "use client";
 
-import { CheckCircle, ShieldCheck, Award, TrendingUp } from "lucide-react";
+import { ShieldCheck, ClipboardCheck, Eye, UserCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import QuickContact from "./ui/QuickContact";
 
 const standards = [
   {
-    title: "Top-Grade Only",
+    title: "Visual Inspection",
     description:
-      "Meticulously selected garments from the highest-quality tier of the grading process.",
-    icon: Award,
+      "Every garment undergoes thorough visual inspection to ensure it meets cream grade quality standards before export.",
+    icon: Eye,
   },
   {
-    title: "Minimal Defects",
+    title: "Order Verification",
     description:
-      "Typical reject rate of just 2–5%, ensuring high value in every bale.",
+      "We verify every order against your specifications — grade, volume, and packaging — before dispatch.",
+    icon: ClipboardCheck,
+  },
+  {
+    title: "Sorting Confirmation",
+    description:
+      "Our sorting process ensures proper categorisation and grade separation, maximising your resale value.",
     icon: ShieldCheck,
   },
   {
-    title: "Resale Ready",
+    title: "Supplier Verification",
     description:
-      "Clean presentation, minimal wear, and many items with original retail tags.",
-    icon: CheckCircle,
-  },
-  {
-    title: "Market Demand",
-    description:
-      "Focused on popular categories and brands that drive strong profit potential.",
-    icon: TrendingUp,
+      "We vet and verify all UK suppliers to ensure consistent quality and reliable supply chains for our partners.",
+    icon: UserCheck,
   },
 ];
 
@@ -52,10 +52,10 @@ export default function QualityStandards() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-premium-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-6 block">
-              Uncompromising Quality
+              Quality Assurance
             </span>
             <h2 className="text-5xl md:text-6xl font-display font-bold text-premium-charcoal mb-10 leading-tight">
-              The Standard <br /> We Live By
+              Built on Trust <br /> & Precision
             </h2>
             <div className="space-y-10">
               {standards.map((standard, index) => (
@@ -108,8 +108,8 @@ export default function QualityStandards() {
               className="absolute -bottom-12 -left-12 bg-white/90 backdrop-blur-xl p-10 rounded-[2.5rem] shadow-2xl max-w-[300px] hidden md:block border border-premium-gold/10"
             >
               <p className="text-premium-charcoal font-display text-xl leading-relaxed italic mb-6">
-                "Our Cream grade represents the absolute peak of second-hand
-                condition."
+                &quot;Precision, professionalism, and trust define our
+                approach.&quot;
               </p>
               <div className="flex items-center gap-2 text-premium-gold">
                 {[...Array(5)].map((_, i) => (
