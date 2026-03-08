@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { Package, ShieldCheck, BarChart3, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import QuickContact from "@/components/ui/QuickContact";
+import PackagingShowcase from "@/components/PackagingShowcase";
+import CTABanner from "@/components/CTABanner";
 
 const wholesaleFeatures = [
   {
@@ -168,6 +170,10 @@ export default function Wholesale() {
           </div>
         </div>
       </section>
+
+      <PackagingShowcase />
+
+      <CTABanner />
 
       <Footer />
     </main>

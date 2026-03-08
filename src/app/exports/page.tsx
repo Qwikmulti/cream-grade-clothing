@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
+import CTABanner from "@/components/CTABanner";
 import { motion } from "framer-motion";
 import {
   Globe2,
@@ -118,6 +119,8 @@ export default function Exports() {
           </div>
         </div>
       </section>
+
+      <CTABanner />
 
       <Footer />
     </main>

@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
+import CTABanner from "@/components/CTABanner";
 import { motion } from "framer-motion";
 import {
   Search,
@@ -13,8 +14,40 @@ import {
   PackageCheck,
   FileCheck,
 } from "lucide-react";
+import { useState } from "react";
 
 export default function Services() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      type: formData.get("type"),
+      details: formData.get("details"),
+    };
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setIsSuccess(true);
+        (e.target as HTMLFormElement).reset();
+        setTimeout(() => setIsSuccess(false), 5000);
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
@@ -175,7 +208,10 @@ export default function Services() {
               </div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-md p-10 rounded-3xl border border-white/10 space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white/5 backdrop-blur-md p-10 rounded-3xl border border-white/10 space-y-6"
+            >
               <h3 className="text-2xl font-display font-bold mb-4">
                 Request Our Services
               </h3>
@@ -186,6 +222,8 @@ export default function Services() {
                   </label>
                   <input
                     type="text"
+                    name="name"
+                    required
                     className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors"
                     placeholder="Company / Contact Name"
                   />
@@ -196,6 +234,8 @@ export default function Services() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    required
                     className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors"
                     placeholder="your@email.com"
                   />
@@ -205,7 +245,10 @@ export default function Services() {
                 <label className="text-xs font-bold uppercase tracking-widest text-white/40">
                   Service Required
                 </label>
-                <select className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors appearance-none">
+                <select
+                  name="type"
+                  className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors appearance-none"
+                >
                   <option className="text-premium-charcoal">
                     Wholesale Supply
                   </option>
@@ -225,18 +268,31 @@ export default function Services() {
                   Brief Description
                 </label>
                 <textarea
+                  name="details"
+                  required
                   className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors resize-none"
                   rows={3}
                   placeholder="Tell us about your requirements..."
                 />
               </div>
-              <button className="w-full py-4 bg-premium-gold text-premium-charcoal font-bold rounded-xl flex items-center justify-center gap-3 hover:bg-white transition-all">
-                Send Inquiry <Send size={18} />
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-4 bg-premium-gold text-premium-charcoal font-bold rounded-xl flex items-center justify-center gap-3 hover:bg-white transition-all disabled:opacity-70"
+              >
+                {isSubmitting
+                  ? "Sending..."
+                  : isSuccess
+                    ? "Inquiry Sent!"
+                    : "Send Inquiry"}{" "}
+                <Send size={18} />
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </section>
+
+      <CTABanner />
 
       <Footer />
     </main>

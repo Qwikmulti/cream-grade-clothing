@@ -5,8 +5,40 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { motion } from "framer-motion";
 import { DollarSign, Recycle, Clock, Sparkles, Send } from "lucide-react";
+import { useState } from "react";
 
 export default function WeBuy() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      type: `Supplier selling ${formData.get("type")} kg`,
+      details: formData.get("details"),
+    };
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setIsSuccess(true);
+        (e.target as HTMLFormElement).reset();
+        setTimeout(() => setIsSuccess(false), 5000);
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
@@ -117,7 +149,10 @@ export default function WeBuy() {
               </div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-md p-10 rounded-3xl border border-white/10 space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white/5 backdrop-blur-md p-10 rounded-3xl border border-white/10 space-y-6"
+            >
               <div className="grid grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-white/40">
@@ -125,6 +160,8 @@ export default function WeBuy() {
                   </label>
                   <input
                     type="text"
+                    name="name"
+                    required
                     className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors"
                     placeholder="John Doe"
                   />
@@ -135,6 +172,8 @@ export default function WeBuy() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    required
                     className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors"
                     placeholder="john@example.com"
                   />
@@ -146,6 +185,8 @@ export default function WeBuy() {
                 </label>
                 <input
                   type="number"
+                  name="type"
+                  required
                   className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors"
                   placeholder="e.g. 100"
                 />
@@ -155,15 +196,26 @@ export default function WeBuy() {
                   Brief Description
                 </label>
                 <textarea
+                  name="details"
+                  required
                   className="w-full bg-transparent border-b border-white/20 py-2 focus:border-premium-gold outline-none transition-colors resize-none"
                   rows={3}
                   placeholder="What type of stock are you selling?"
                 />
               </div>
-              <button className="w-full py-4 bg-premium-gold text-premium-charcoal font-bold rounded-xl flex items-center justify-center gap-3 hover:bg-white transition-all">
-                Send Inquiry <Send size={18} />
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-4 bg-premium-gold text-premium-charcoal font-bold rounded-xl flex items-center justify-center gap-3 hover:bg-white transition-all disabled:opacity-70"
+              >
+                {isSubmitting
+                  ? "Sending..."
+                  : isSuccess
+                    ? "Offer Sent!"
+                    : "Send Inquiry"}{" "}
+                <Send size={18} />
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </section>

@@ -3,7 +3,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import CTABanner from "@/components/CTABanner";
 import {
   Truck,
   MapPinned,
@@ -132,6 +133,8 @@ export default function Shipping() {
           </button>
         </div>
       </section>
+
+      <CTABanner />
 
       <Footer />
     </main>

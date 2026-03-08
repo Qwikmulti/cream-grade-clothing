@@ -3,6 +3,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
+import PackagingShowcase from "@/components/PackagingShowcase";
+import CTABanner from "@/components/CTABanner";
 import { motion } from "framer-motion";
 import {
   Shirt,
@@ -156,6 +158,10 @@ export default function Specialisations() {
           </div>
         </div>
       </section>
+
+      <PackagingShowcase />
+
+      <CTABanner />
 
       <Footer />
     </main>

@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { motion } from "framer-motion";
+import CTABanner from "@/components/CTABanner";
 import { Target, Users2, ShieldCheck, Handshake, MapPin } from "lucide-react";
 import Image from "next/image";
 
@@ -160,6 +161,8 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+
+      <CTABanner />
 
       <Footer />
     </main>

@@ -145,16 +145,27 @@ export default function PricingTable() {
             viewport={{ once: true }}
             className="text-premium-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-4 block"
           >
-            Transparent Pricing
+            Wholesale Trade Prices
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-display font-bold text-premium-charcoal mb-6"
+            className="text-4xl md:text-5xl font-display font-bold text-premium-charcoal mb-4"
           >
             Price List <span className="italic text-premium-gold">& Deals</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-premium-charcoal/50 text-sm max-w-lg mx-auto"
+          >
+            Prices are indicative wholesale trade rates per kilogram. Final
+            pricing is subject to order volume, market conditions, and
+            destination.
+          </motion.p>
         </div>
 
         <motion.div

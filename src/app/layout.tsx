@@ -30,6 +30,30 @@ export const metadata: Metadata = {
     "strategic sourcing partner",
   ],
   authors: [{ name: "Just Stock Trading Limited" }],
+  openGraph: {
+    title: "Just Stock Trading Limited | Strategic Sourcing & Export",
+    description:
+      "UK-based procurement and wholesale export company delivering premium cream grade clothing to international buyers.",
+    url: "https://juststocktrading.com",
+    siteName: "Just Stock Trading Limited",
+    images: [
+      {
+        url: "/images/bags-of-clothing.png",
+        width: 1200,
+        height: 630,
+        alt: "Just Stock Trading Limited - Wholesale Export & Sourcing",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Just Stock Trading Limited | Strategic Sourcing & Export",
+    description:
+      "UK-based procurement and wholesale export company delivering premium cream grade clothing to international buyers.",
+    images: ["/images/bags-of-clothing.png"],
+  },
 };
 
 export const viewport = {
@@ -39,6 +63,7 @@ export const viewport = {
 };
 
 import Galaxy from "@/components/galaxy";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function RootLayout({
   children,
@@ -63,6 +88,7 @@ export default function RootLayout({
         </div> */}
 
         <div className="relative z-10">{children}</div>
+        <WhatsAppButton />
       </body>
     </html>
   );

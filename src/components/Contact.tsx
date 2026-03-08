@@ -3,8 +3,44 @@
 import { Mail, Phone, MessageCircle, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import Squares from "./ui/Squares";
+import { useState } from "react";
+import { CONTACT } from "@/lib/constants";
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      details: formData.get("details"),
+      type: "Bulk/Export Inquiry",
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setIsSuccess(true);
+        (e.target as HTMLFormElement).reset();
+        setTimeout(() => setIsSuccess(false), 5000);
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -38,13 +74,13 @@ export default function Contact() {
                   Connect <br /> with Us
                 </h2>
                 <p className="text-white/50 mb-16 leading-relaxed font-light text-lg">
-                  Specialists in premium wholesale clothing. Available for
-                  collection and international delivery.
+                  Your strategic UK sourcing partner. Available for wholesale
+                  supply and international export.
                 </p>
 
                 <div className="space-y-12">
                   <a
-                    href="tel:+447378473604"
+                    href={`tel:${CONTACT.phoneRaw}`}
                     className="flex items-center gap-8 group"
                   >
                     <div className="w-16 h-16 rounded-2xl border border-white/10 flex items-center justify-center group-hover:bg-premium-gold group-hover:border-premium-gold transition-all duration-500 transform group-hover:-rotate-6">
@@ -58,13 +94,13 @@ export default function Contact() {
                         Call Our Office
                       </span>
                       <span className="text-xl font-bold group-hover:text-premium-gold transition-colors">
-                        +44 7378 473 604
+                        {CONTACT.phone}
                       </span>
                     </div>
                   </a>
 
                   <a
-                    href="https://wa.me/447378473604"
+                    href={CONTACT.whatsappMessage}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-8 group"
@@ -93,9 +129,7 @@ export default function Contact() {
                       <span className="text-[10px] uppercase tracking-widest text-white/30 block mb-1">
                         Our Base
                       </span>
-                      <span className="text-xl font-bold">
-                        Featherstone, Yorkshire
-                      </span>
+                      <span className="text-xl font-bold">United Kingdom</span>
                     </div>
                   </div>
                 </div>
@@ -103,7 +137,7 @@ export default function Contact() {
 
               <div className="mt-20 pt-10 border-t border-white/5">
                 <p className="text-[10px] text-white/20 uppercase tracking-[0.3em] font-bold">
-                  Wholesale Clothes Limited
+                  Just Stock Trading Limited
                 </p>
               </div>
             </div>
@@ -117,7 +151,7 @@ export default function Contact() {
                 Request a quote for export or wholesale bulk orders.
               </p>
 
-              <form className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="group">
                     <label className="block text-[10px] font-bold uppercase tracking-widest text-premium-charcoal/30 mb-3 group-focus-within:text-premium-gold transition-colors">
@@ -125,6 +159,8 @@ export default function Contact() {
                     </label>
                     <input
                       type="text"
+                      name="name"
+                      required
                       className="w-full px-8 py-5 bg-premium-cream/50 border-b-2 border-transparent focus:border-premium-gold outline-none transition-all duration-300 font-medium"
                       placeholder="Your Name"
                     />
@@ -135,6 +171,8 @@ export default function Contact() {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      required
                       className="w-full px-8 py-5 bg-premium-cream/50 border-b-2 border-transparent focus:border-premium-gold outline-none transition-all duration-300 font-medium"
                       placeholder="Email Address"
                     />
@@ -145,6 +183,8 @@ export default function Contact() {
                     Inquiry Details
                   </label>
                   <textarea
+                    name="details"
+                    required
                     rows={4}
                     className="w-full px-8 py-5 bg-premium-cream/50 border-b-2 border-transparent focus:border-premium-gold outline-none transition-all duration-300 font-medium resize-none"
                     placeholder="How can we help your business?"
@@ -152,9 +192,16 @@ export default function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="relative w-full py-6 bg-premium-charcoal text-white rounded-2xl font-bold text-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-premium-gold/20"
+                  disabled={isSubmitting}
+                  className="relative w-full py-6 bg-premium-charcoal text-white rounded-2xl font-bold text-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-premium-gold/20 disabled:opacity-70"
                 >
-                  <span className="relative z-10">Send Direct Inquiry</span>
+                  <span className="relative z-10">
+                    {isSubmitting
+                      ? "Sending..."
+                      : isSuccess
+                        ? "Message Sent!"
+                        : "Send Direct Inquiry"}
+                  </span>
                   <div className="absolute inset-0 bg-premium-gold scale-x-0 transition-transform duration-500 origin-left" />
                 </button>
               </form>
