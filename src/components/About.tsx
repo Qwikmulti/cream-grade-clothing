@@ -99,7 +99,7 @@ export default function About() {
               <div className="flex items-center gap-6">
                 <div className="w-12 h-[1px] bg-premium-gold/30" />
                 <p className="text-premium-charcoal font-display text-xl">
-                  For Enquiries: +44 7378 473 604
+                  For Enquiries: +44 07344056285
                 </p>
               </div>
 

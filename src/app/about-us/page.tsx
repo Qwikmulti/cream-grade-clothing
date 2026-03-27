@@ -148,7 +148,7 @@ export default function AboutUs() {
                     <div>
                       <div className="font-bold">Headquarters</div>
                       <div className="text-white/40 text-sm">
-                        United Kingdom
+                        Accent business centre BD3 9BD, England, United Kingdom
                       </div>
                     </div>
                   </div>

@@ -39,19 +39,19 @@ export default function ContactUs() {
                   {
                     icon: <Mail />,
                     title: "Email Us",
-                    detail: "hello@creamgrade.uk",
+                    detail: "info@juststocktrading.co.uk",
                     label: "Inquiries",
                   },
                   {
                     icon: <Phone />,
                     title: "Call Us",
-                    detail: "+44 (0) 737 847 3604",
+                    detail: "+44 (0) 7344056285",
                     label: "Direct Line",
                   },
                   {
                     icon: <MessageSquare />,
                     title: "WhatsApp",
-                    detail: "+44 7378 473604",
+                    detail: "+44 (0) 7344056285",
                     label: "Quick Chat",
                   },
                   {
@@ -90,7 +90,7 @@ export default function ContactUs() {
                     Just Stock Trading Limited
                   </div>
                   <div className="text-sm text-premium-charcoal/40">
-                    United Kingdom
+                    Accent business centre BD3 9BD, England, United Kingdom
                   </div>
                 </div>
               </div>

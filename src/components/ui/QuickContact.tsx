@@ -17,7 +17,7 @@ export default function QuickContact({
   return (
     <div className={`mt-12 flex justify-center gap-6 ${className}`}>
       <motion.a
-        href="tel:+447378473604"
+        href="tel:+447344056285"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -32,7 +32,7 @@ export default function QuickContact({
       </motion.a>
 
       <motion.a
-        href="https://wa.me/447378473604"
+        href="https://wa.me/447344056285?text=Hello%2C%20I%27m%20interested%20in%20your%20wholesale%20clothing%20supply."
         target="_blank"
         rel="noopener noreferrer"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -50,7 +50,7 @@ export default function QuickContact({
       </motion.a>
 
       <motion.a
-        href="mailto:inquiry@creamgrade.com"
+        href="mailto:info@juststocktrading.co.uk"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}

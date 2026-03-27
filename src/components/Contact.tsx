@@ -129,7 +129,7 @@ export default function Contact() {
                       <span className="text-[10px] uppercase tracking-widest text-white/30 block mb-1">
                         Our Base
                       </span>
-                      <span className="text-xl font-bold">United Kingdom</span>
+                      <span className="text-xl font-bold"> Accent business centre BD3 9BD, England, United Kingdom</span>
                     </div>
                   </div>
                 </div>
